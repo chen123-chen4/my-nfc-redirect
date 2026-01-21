@@ -1,26 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>自动跳转中</title>
+    <title>跳转至填写页面</title>
+    <meta http-equiv="refresh" content="0; url=https://doc.weixin.qq.com/forms/AMcAeQcjAAoAV8A6gYYAPcCN01475AVUf?page=1#/fill">
     <script>
-        // 您的收集表门户页面链接
-        var formPortalUrl = "https://doc.weixin.qq.com/forms/AMcAeQcjAAoAV8A6gYYAPcCN01475AVUf";
-
-        // 页面加载后立即跳转
-        window.onload = function() {
-            // 优先尝试直接跳转到fill页面（您链接2的形态）
-            window.location.href = formPortalUrl + "?page=1#/fill";
-
-            // 设置一个备用方案：如果3秒后页面仍未成功跳转，则尝试普通门户页
-            setTimeout(function() {
-                if (window.location.href.indexOf('#/fill') === -1) {
-                    window.location.href = formPortalUrl;
-                }
-            }, 3000);
-        };
+        // 主跳转：使用meta刷新标签
+        // 备用跳转：使用JavaScript
+        window.location.href = "https://doc.weixin.qq.com/forms/AMcAeQcjAAoAV8A6gYYAPcCN01475AVUf?page=1#/fill";
     </script>
 </head>
 <body>
-    <p>正在自动打开填写页面，请稍候...</p>
+    <p>正在为您自动打开表单...</p>
+    <p>如果页面没有自动跳转，请 <a href="https://doc.weixin.qq.com/forms/AMcAeQcjAAoAV8A6gYYAPcCN01475AVUf?page=1#/fill">点击此处</a>。</p>
 </body>
 </html>
