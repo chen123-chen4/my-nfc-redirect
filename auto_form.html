@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>跳转至填写页面</title>
-    <meta http-equiv="refresh" content="0; url=https://doc.weixin.qq.com/forms/AMcAeQcjAAoAV8A6gYYAPcCN01475AVUf?page=1#/fill">
+    <title>直接打开表单</title>
     <script>
-        // 主跳转：使用meta刷新标签
-        // 备用跳转：使用JavaScript
-        window.location.href = "https://doc.weixin.qq.com/forms/AMcAeQcjAAoAV8A6gYYAPcCN01475AVUf?page=1#/fill";
+        // 优先尝试使用应用深度链接直接唤醒企业微信
+        // 注：此链接需要您从企业微信App内部分享功能获取，以下是格式示例
+        window.location.href = 'wxwork://platform/features/collectForm?form_id=AMcAeQcjAAoAV8A6gYYAPcCN01475AVUf';
+
+        // 设置一个延迟，如果深度链接唤醒失败，则跳转到网页版作为备用方案
+        setTimeout(function() {
+            window.location.href = 'https://doc.weixin.qq.com/forms/AMcAeQcjAAoAV8A6gYYAPcCN01475AVUf?page=1#/fill';
+        }, 800);
     </script>
 </head>
 <body>
-    <p>正在为您自动打开表单...</p>
-    <p>如果页面没有自动跳转，请 <a href="https://doc.weixin.qq.com/forms/AMcAeQcjAAoAV8A6gYYAPcCN01475AVUf?page=1#/fill">点击此处</a>。</p>
+    <p>正在尝试直接打开企业微信...</p>
 </body>
 </html>
